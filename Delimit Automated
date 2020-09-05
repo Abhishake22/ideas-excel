@@ -1,0 +1,9 @@
+|| Macro code to delimit the '|' from the given sheet
+Sub delimit()
+ Range("A2").EntireRow.Delete
+ Dim lrow As Long
+ lrow = Cells(Rows.Count, 1).End(xlUp).Row
+ Range("A1:A" & lrow).TextToColumns Destination:=Range("A1"), DataType:=xlDelimited, _
+         OtherChar:="|"
+        ActiveSheet.UsedRange.Columns.Autofit
+End Sub
