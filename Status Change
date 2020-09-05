@@ -1,0 +1,15 @@
+||Macro code for Status change to cold
+Sub statuschange()
+Range("C:C").Copy Range("B:B")
+Range("V:V").Copy Range("C:C")
+Range("X:X").Copy Range("D:D")
+Range("Y:Y").Copy Range("E:E")
+Range("F:GI").EntireColumn.Delete
+Range("A1").AutoFilter Field:=5, Criteria1:="Converted", Operator:=xlOr, Criteria2:="Cancel", VisibleDropDown:=True
+ActiveSheet.AutoFilter.Range.Offset(1, 0).EntireRow.Delete
+Cells.AutoFilter
+Range("E:E").EntireColumn.Delete
+lrow = Cells(Rows.Count, 1).End(xlUp).Row
+Range("C2:C" & lrow) = "'01"
+Range("D2:D" & lrow) = "Z5"
+End Sub
