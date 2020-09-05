@@ -1,0 +1,4 @@
+||Macro code to Autofit the Excel cells
+Sub Abhi_Autofit()
+ActiveSheet.UsedRange.Columns.Autofit
+End Sub
